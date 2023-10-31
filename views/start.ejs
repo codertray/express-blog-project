@@ -1,0 +1,11 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+<h1>What's The Name Of Your Blog?</h1>
+    <form action="/submit" method="POST">
+        <input type="text" name="title" placeholder="Your Blog" autocomplete="off"> 
+        <input type="submit" value="submit">
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

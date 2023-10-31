@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container">
+    <form action="/edit/submit" method="POST" autocomplete="off">
+        <input type="hidden" name="index" value="<%= i %>">
+        <input type="text" name="title" value="<%= oldTitle %>">
+        <textarea name="body"><%= oldBody %></textarea>
+        <input type="submit" name="submit">
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>

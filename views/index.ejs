@@ -1,0 +1,27 @@
+<%- include("partials/header.ejs") %>
+<div class="head-banner">
+    <h1><%= header %></h1>
+    <a class="btn" role="button" href="/new-post">New Post</a> 
+</div>
+<div class="container">
+    <% if(locals.uploads && uploads.length >= 1){ %>
+        <% for (let i=0; i < uploads.length; i++) {
+            const element = uploads[i]; %>
+            <div class="post" id="post-<%= i %>">
+                <div class="heading">
+                    <h2><%= element["postTitle"] %></h2>
+                    <form action="/edit" class=" edit hidden"  method="POST">
+                        <input type="hidden" name="index" value="<%= i %>">
+                        <input type="submit" value="Edit">
+                    </form>
+                </div>
+                <p><%= element["postBody"] %></p>
+            </div>
+        <% } %>
+    <% } else{ %>
+        <h2>Nothing Here Yet!</h2>
+        <p>your new posts will appear here.</p>
+    <% } %>
+</div>
+
+<%- include("partials/footer.ejs") %>
